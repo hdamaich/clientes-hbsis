@@ -1,0 +1,47 @@
+﻿<div class="jumbotron">
+    <h1 class="text-center">Clientes HBSIS</h1>
+</div>
+<div class="container">
+    <p *ngIf="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <a [routerLink]="['/cadastro']" class="btn btn-primary">
+                            Novo cliente 
+                        </a>
+                    </span>
+                    <input #textoProcurado (keyup)="0" class="form-control" placeholder="filtrar pelo nome">
+                </div>
+            </form>
+        </div> <!-- fim col-md-12 -->
+    </div> <!-- fim row -->
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Telefone</th>
+                        <th>Remover</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cliente of clientes">
+                        <td>{{cliente.Codigo}}</td>
+                        <td>{{cliente.Nome}}</td>
+                        <td>{{cliente.CPF}}</td>
+                        <td>{{cliente.Telefone}}</td>
+                        <td><a href="#" (click) ="remove(cliente)">Remover</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+    </div> 
+    <br>
+</div>

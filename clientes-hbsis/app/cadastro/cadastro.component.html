@@ -1,0 +1,71 @@
+﻿<div class="jumbotron">
+    <h1 class="text-center">Clientes HBSIS</h1>
+</div>
+<div class="container">
+    <p *ngIf="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+
+    <form [formGroup]="meuForm" class="row" (submit)="cadastrar($event)">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Codigo</label>
+                <input formControlName="codigo"
+                       name="codigo"
+                       [(ngModel)]="cliente.Codigo"
+                       class="form-control"
+                       autocomplete="off">
+                <span *ngIf="meuForm.controls.codigo.invalid"  class="form-control alert-danger">
+                    Codigo obrigatório
+                </span>
+            </div>
+            <div class="form-group">
+                <label>Nome</label>
+                <input formControlName="nome"
+                       name="nome"
+                       [(ngModel)]="cliente.Nome"
+                       class="form-control"
+                       autocomplete="off">
+                <span *ngIf="meuForm.controls.nome.invalid" class="form-control alert-danger">
+                    Nome obrigatório
+                </span>
+            </div>
+            <div class="form-group">
+                <label>CPF</label>
+                <input #cpfi formControlName="cpf"
+                       name="cpf"
+                       [(ngModel)]="cliente.CPF"
+                       class="form-control"
+                       autocomplete="off"
+                      >
+                <div *ngIf="meuForm.controls.cpf.invalid">
+                    <span *ngIf="meuForm.controls.cpf.errors.required" class="form-control alert-danger">
+                        CPF obrigatório
+                    </span>
+                    <span *ngIf="meuForm.controls.cpf.errors.minlength" class="form-control alert-danger">
+                        CPF em formato invalido
+                    </span>
+                </div>    
+            </div>
+            <div class="form-group">
+                <label>Telefone</label>
+                <input #telefonei formControlName="telefone"
+                       name="telefone"
+                       [(ngModel)]="cliente.Telefone"
+                       class="form-control"
+                       autocomplete="off"
+                       >
+                <div *ngIf="meuForm.controls.telefone.invalid">
+                    <span *ngIf="meuForm.controls.telefone.errors.required" class="form-control alert-danger">
+                        Telefone obrigatório
+                    </span>
+                    <span *ngIf="meuForm.controls.telefone.errors.minlength" class="form-control alert-danger">
+                        Telefone em formato invalido
+                    </span>
+                </div>    
+            </div>
+            <button (click)="cadastrar()" class="btn btn-primary" [type]="submit" [disabled]="meuForm.invalid">Salvar</button>
+
+            <a [routerLink]="['/']" class="btn btn-primary">Voltar</a>
+            <hr>
+        </div>
+    </form>
+</div>
