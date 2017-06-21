@@ -8,35 +8,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var ClienteComponent = (function () {
     function ClienteComponent() {
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], ClienteComponent.prototype, "Codigo", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], ClienteComponent.prototype, "Nome", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], ClienteComponent.prototype, "CPF", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], ClienteComponent.prototype, "Telefone", void 0);
-    ClienteComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'cliente',
-            templateUrl: './cliente.component.html',
-        }), 
-        __metadata('design:paramtypes', [])
-    ], ClienteComponent);
     return ClienteComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], ClienteComponent.prototype, "Codigo", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], ClienteComponent.prototype, "Nome", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], ClienteComponent.prototype, "CPF", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], ClienteComponent.prototype, "Telefone", void 0);
+ClienteComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'cliente',
+        templateUrl: './cliente.component.html',
+    })
+], ClienteComponent);
 exports.ClienteComponent = ClienteComponent;
 //# sourceMappingURL=cliente.component.js.map
