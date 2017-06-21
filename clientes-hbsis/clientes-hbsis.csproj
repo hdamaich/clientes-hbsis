@@ -163,6 +163,7 @@
     <Content Include="packages.config" />
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -184,6 +185,7 @@
     <Content Include="app\cadastro\cadastro.component.html" />
     <TypeScriptCompile Include="app\cliente\cliente.component.ts" />
     <TypeScriptCompile Include="app\cliente\cliente.module.ts" />
+    <TypeScriptCompile Include="app\cliente\cliente.pipes.ts" />
     <TypeScriptCompile Include="app\cliente\cliente.service.ts" />
     <TypeScriptCompile Include="app\listagem\listagem.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
@@ -204,7 +206,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>3276</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:3276/</IISUrl>
+          <IISUrl>http://localhost:3236/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

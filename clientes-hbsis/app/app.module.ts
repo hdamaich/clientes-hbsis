@@ -18,7 +18,8 @@ import { ClienteModule } from './cliente/cliente.module';
         routing,
         FormsModule,
         ReactiveFormsModule,
-        ClienteModule,
+        ClienteModule
+
     ],
     declarations: [AppComponent, CadastroComponent, ListagemComponent],
     bootstrap: [AppComponent]

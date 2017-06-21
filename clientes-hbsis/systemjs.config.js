@@ -25,7 +25,9 @@
 
             // other libraries
             'rxjs': 'npm:rxjs',
-            'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+            'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+            'angular2-text-mask': 'node_modules/angular2-text-mask'
+
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -34,7 +36,8 @@
             },
             rxjs: {
                 defaultExtension: 'js'
-            }
+            },
+            'angular2-text-mask': { defaultExtension: 'js' },
         }
     });
 })(this);

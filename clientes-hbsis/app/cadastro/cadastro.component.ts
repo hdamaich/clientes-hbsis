@@ -8,7 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
     moduleId: module.id,
     selector: 'cadastro',
-    templateUrl: './cadastro.component.html'
+    templateUrl: './cadastro.component.html',
+
 })
 export class CadastroComponent {
     cliente: ClienteComponent = new ClienteComponent();
@@ -41,17 +42,13 @@ export class CadastroComponent {
 
         });
         this.meuForm = fb.group({
-            cpf: ['', Validators.compose([Validators.required])],
-            codigo: ['', Validators.required],
+            cpf: ['', Validators.compose([Validators.required, Validators.pattern('^[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}$')])],
+            codigo: ['', Validators.compose([Validators.required, Validators.pattern('^[0-9]+$')])],
             nome: ['', Validators.required],
-            telefone: ['', Validators.compose([Validators.required])],
+            telefone: ['', Validators.compose([Validators.required, Validators.pattern('^[0-9]{5}\-[0-9]{4}$')])]
         });
-   }
-
+    }
     cadastrar(event: any) {
-
-        event.preventDefault();
-
         this.service
             .cadastra(this.cliente)
             .subscribe(res => {
@@ -59,6 +56,7 @@ export class CadastroComponent {
                 this.cliente = new ClienteComponent();
                 if (!res.inclusao) this.router.navigate(['']);
             }, erro => console.log(erro));
+        return false;
     }
 
 }

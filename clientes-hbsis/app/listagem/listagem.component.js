@@ -8,9 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var cliente_service_1 = require("../cliente/cliente.service");
+var core_1 = require('@angular/core');
+var cliente_service_1 = require('../cliente/cliente.service');
 var ListagemComponent = (function () {
     function ListagemComponent(service) {
         var _this = this;
@@ -37,15 +36,15 @@ var ListagemComponent = (function () {
             _this.mensagem = "Não foi possivel remover o cliente";
         });
     };
+    ListagemComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'listagem',
+            templateUrl: './listagem.component.html'
+        }), 
+        __metadata('design:paramtypes', [cliente_service_1.ClienteService])
+    ], ListagemComponent);
     return ListagemComponent;
 }());
-ListagemComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'listagem',
-        templateUrl: './listagem.component.html'
-    }),
-    __metadata("design:paramtypes", [cliente_service_1.ClienteService])
-], ListagemComponent);
 exports.ListagemComponent = ListagemComponent;
 //# sourceMappingURL=listagem.component.js.map

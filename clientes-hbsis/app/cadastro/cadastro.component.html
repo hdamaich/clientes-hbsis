@@ -40,8 +40,8 @@
                     <span *ngIf="meuForm.controls.cpf.errors.required" class="form-control alert-danger">
                         CPF obrigatório
                     </span>
-                    <span *ngIf="meuForm.controls.cpf.errors.minlength" class="form-control alert-danger">
-                        CPF em formato invalido
+                    <span *ngIf="meuForm.controls.cpf.errors.pattern" class="form-control alert-danger">
+                        CPF em formato invalido. Formato esperado 999.999.999-99
                     </span>
                 </div>    
             </div>
@@ -57,12 +57,12 @@
                     <span *ngIf="meuForm.controls.telefone.errors.required" class="form-control alert-danger">
                         Telefone obrigatório
                     </span>
-                    <span *ngIf="meuForm.controls.telefone.errors.minlength" class="form-control alert-danger">
-                        Telefone em formato invalido
+                    <span *ngIf="meuForm.controls.telefone.errors.pattern" class="form-control alert-danger">
+                        Telefone em formato invalido. Formato esperado 99999-9999
                     </span>
                 </div>    
             </div>
-            <button (click)="cadastrar()" class="btn btn-primary" [type]="submit" [disabled]="meuForm.invalid">Salvar</button>
+            <button class="btn btn-primary" type="submit" [disabled]="meuForm.invalid">Salvar</button>
 
             <a [routerLink]="['/']" class="btn btn-primary">Voltar</a>
             <hr>

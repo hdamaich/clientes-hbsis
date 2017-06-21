@@ -13,7 +13,7 @@
                             Novo cliente 
                         </a>
                     </span>
-                    <input #textoProcurado (keyup)="0" class="form-control" placeholder="filtrar pelo nome">
+                    <input #textoProcurado (keyup)="0" class="form-control" placeholder="Filtrar pelo nome">
                 </div>
             </form>
         </div> <!-- fim col-md-12 -->
@@ -32,12 +32,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let cliente of clientes">
+                    <tr *ngFor="let cliente of clientes | filtroPorTitulo: textoProcurado.value">
                         <td>{{cliente.Codigo}}</td>
-                        <td>{{cliente.Nome}}</td>
+                        <td><a [routerLink]="['/cadastro', cliente.ID]">{{cliente.Nome}}</a></td>
                         <td>{{cliente.CPF}}</td>
                         <td>{{cliente.Telefone}}</td>
-                        <td><a href="#" (click) ="remove(cliente)">Remover</a></td>
+                        <td><a (click)="remove(cliente)">Remover</a></td>
                     </tr>
                 </tbody>
             </table>
